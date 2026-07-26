@@ -1,0 +1,118 @@
+"use client";
+
+import { useState } from "react";
+
+export default function SkillSwapPage() {
+  const [finding, setFinding] = useState(false);
+  const [partner, setPartner] = useState(null);
+
+  const students = [
+    {
+      name: "Ahmed",
+      country: "Pakistan 🇵🇰",
+      teaches: "Python",
+      wants: "Java",
+    },
+    {
+      name: "Emma",
+      country: "Canada 🇨🇦",
+      teaches: "English",
+      wants: "Python",
+    },
+    {
+      name: "Ali",
+      country: "UAE 🇦🇪",
+      teaches: "Math",
+      wants: "Physics",
+    },
+    {
+      name: "Sophia",
+      country: "Germany 🇩🇪",
+      teaches: "React",
+      wants: "AI",
+    },
+  ];
+
+  function findPartner() {
+    setFinding(true);
+    setPartner(null);
+
+    setTimeout(() => {
+      const random =
+        students[Math.floor(Math.random() * students.length)];
+
+      setPartner(random);
+      setFinding(false);
+    }, 3000);
+  }
+
+  return (
+    <main className="min-h-screen bg-slate-950 text-white flex items-center justify-center p-8">
+
+      <div className="max-w-2xl w-full bg-slate-900 rounded-3xl p-10 border border-cyan-500">
+
+        <h1 className="text-5xl font-black text-cyan-400 text-center">
+          🎲 Skill Swap Roulette
+        </h1>
+
+        <p className="text-center text-gray-400 mt-4">
+          Instantly find another student around the world to study with.
+        </p>
+
+        <div className="mt-10 flex justify-center">
+          <button
+            onClick={findPartner}
+            disabled={finding}
+            className="bg-cyan-500 hover:bg-cyan-400 text-black px-8 py-4 rounded-xl font-bold"
+          >
+            {finding ? "Searching..." : "🔍 Find Study Partner"}
+          </button>
+        </div>
+
+        {finding && (
+          <div className="mt-8 text-center text-cyan-400 animate-pulse text-xl">
+            🌍 Finding someone online...
+          </div>
+        )}
+
+        {partner && (
+          <div className="mt-10 bg-slate-800 rounded-2xl p-8">
+
+            <h2 className="text-3xl font-bold">
+              {partner.name}
+            </h2>
+
+            <p className="mt-3">
+              📍 {partner.country}
+            </p>
+
+            <p className="mt-3">
+              📚 Can Teach:
+              <span className="text-green-400 font-bold">
+                {" "}
+                {partner.teaches}
+              </span>
+            </p>
+
+            <p className="mt-3">
+              🎯 Wants to Learn:
+              <span className="text-yellow-400 font-bold">
+                {" "}
+                {partner.wants}
+              </span>
+            </p>
+
+            <button
+              className="mt-8 w-full bg-green-500 hover:bg-green-400 text-black py-3 rounded-xl font-bold"
+            >
+              🚀 Start Study Session
+            </button>
+
+          </div>
+        )}
+
+      </div>
+
+    </main>
+  );
+}
