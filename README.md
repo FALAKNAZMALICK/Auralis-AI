@@ -1,4 +1,4 @@
-#### 🎓 Auralis AI – Intelligent AI Workspace
+# 🎓 Auralis AI – Intelligent AI Workspace
 
 > An all-in-one AI-powered learning and productivity platform built with **Next.js**, **Gemini AI**, and modern web technologies.
 
