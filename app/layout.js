@@ -12,6 +12,25 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+<footer className="w-full py-6 text-center border-t border-slate-800 bg-slate-950 text-slate-400 text-sm">
+  <p>© 2026 Auralis AI. Built by Falak Naz. All rights reserved.</p>
+  <div className="mt-3 flex justify-center items-center">
+    <a 
+      href="https://aifluency.flyrank.ai/" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 text-xs text-amber-500 hover:underline"
+    >
+      <img 
+        src="https://aifluency.flyrank.ai/badge.svg" 
+        alt="FlyRank Graduate Badge" 
+        className="h-6 w-auto" 
+      />
+      <span>Verified FlyRank Graduate</span>
+    </a>
+  </div>
+</footer>
+
 export const metadata = {
   title: "Auralis AI — AI Learning & Productivity Workspace",
   description:
