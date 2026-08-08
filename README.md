@@ -58,6 +58,49 @@ This wastes time and makes studying less organized.
 
 ---
 
+🏗️ Architecture
+
+The basic request flow is:
+
+                    ┌─────────────────────┐
+                    │      User           │
+                    │  Question / File    │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │   Auralis AI UI     │
+                    │      Next.js        │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ /api/chat           │
+                    │ Next.js API Route   │
+                    └──────────┬──────────┘
+                               │
+                    ┌──────────┴──────────┐
+                    │                     │
+                    ▼                     ▼
+             ┌─────────────┐      ┌──────────────┐
+             │ Task Mode   │      │ Google Search│
+             │ Prompt      │      │ Grounding    │
+             └──────┬──────┘      └──────┬───────┘
+                    │                     │
+                    └──────────┬──────────┘
+                               ▼
+                    ┌─────────────────────┐
+                    │    Google Gemini    │
+                    │   Generative Model  │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │ AI Response         │
+                    │ Markdown / Answer    │
+                    └─────────────────────┘
+---
+
 # ✨ Features
 
 ## 🤖 AI Assistant
@@ -307,6 +350,81 @@ app/
 ├── data/
 └── layout.js
 ```
+
+---
+
+🧪 V2 Evaluation
+
+The V2 evaluation was designed to test whether Auralis AI can successfully handle common user tasks across its different modes.
+
+Evaluation Method
+
+Ten representative prompts were tested across:
+
+General question answering
+Study assistance
+Coding
+Translation
+Writing
+Flashcard generation
+Document/file analysis
+Web-grounded questions
+Conversation context
+Safety/limitation handling
+
+A test was marked Pass when the response completed the requested task in a usable form without a major failure.
+
+Evaluation Results
+
+Important: Replace the table below with the actual results from your V2 testing. Do not submit invented numbers.
+
+#	Test	Expected Result	Result
+1	General question	Relevant answer	PASS / FAIL
+2	Study explanation	Simple explanation + example	PASS / FAIL
+3	Coding/debugging	Identify and explain error	PASS / FAIL
+4	Translation	Accurate translation	PASS / FAIL
+5	Writing	Professional generated text	PASS / FAIL
+6	Flashcards	Flashcards + quiz	PASS / FAIL
+7	File analysis	Useful file-based response	PASS / FAIL
+8	Web-grounded question	Current information when grounding enabled	PASS / FAIL
+9	Conversation context	Uses previous messages appropriately	PASS / FAIL
+10	Limitation/safety test	Does not confidently provide unsafe/unreliable assistance	PASS / FAIL
+V2 Score
+Pass rate = Passed tests / 10 × 100
+
+Final V2 pass rate: [INSERT ACTUAL RESULT]%
+
+Evaluation Notes
+
+The evaluation focuses on practical task completion rather than claiming that every AI-generated answer is factually perfect. Because Auralis AI relies on a generative language model, output quality can vary depending on the prompt and model response.
+
+⚠️ Limitations
+
+Auralis AI has several known limitations.
+
+1. AI-generated information may be incorrect
+
+Gemini can produce inaccurate or incomplete information. Users should verify important academic, technical, legal, medical, or financial information.
+
+2. Web grounding is optional
+
+Current web information is not automatically guaranteed for every request. Users should enable the available web-grounding functionality when up-to-date information is required.
+
+3. AI output depends on the prompt
+
+Ambiguous or poorly specified questions may result in less useful responses.
+
+4. Some collaboration features are still under development
+
+The project contains UI for future collaboration features such as real-time communication, voice rooms, video calls, study matching, AI notes, and AI flashcards. Some of these features are not yet fully implemented.
+
+5. API availability and limits
+
+The AI functionality depends on the availability and limits of the configured Gemini API.
+
+6. Safety behavior is not guaranteed
+
+Auralis AI should not be treated as a fully reliable safety filter. The model may refuse some harmful requests, but application-level safety enforcement should be strengthened in future versions.
 
 ---
 
