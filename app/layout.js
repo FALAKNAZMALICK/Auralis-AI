@@ -13,8 +13,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Auralis AI",
-  description: "Your Intelligent Workspace",
+  title: "Auralis AI — AI Learning & Productivity Workspace",
+  description:
+    "Auralis AI is an AI-powered learning and productivity workspace for studying, coding, writing, translation, and more.",
+  openGraph: {
+    title: "Auralis AI — AI Learning & Productivity Workspace",
+    description:
+      "Study, code, write, translate, and learn with Auralis AI.",
+    url: "https://auralis-ai-delta.vercel.app/",
+    siteName: "Auralis AI",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Auralis AI — AI Learning & Productivity Workspace",
+    description:
+      "An AI-powered learning and productivity workspace.",
+  },
 };
 
 export default function RootLayout({ children }) {
