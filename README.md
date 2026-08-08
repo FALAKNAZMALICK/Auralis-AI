@@ -378,17 +378,18 @@ Evaluation Results
 
 Important: Replace the table below with the actual results from your V2 testing. Do not submit invented numbers.
 
-#	Test	Expected Result	Result
-1	General question	Relevant answer	PASS / FAIL
-2	Study explanation	Simple explanation + example	PASS / FAIL
-3	Coding/debugging	Identify and explain error	PASS / FAIL
-4	Translation	Accurate translation	PASS / FAIL
-5	Writing	Professional generated text	PASS / FAIL
-6	Flashcards	Flashcards + quiz	PASS / FAIL
-7	File analysis	Useful file-based response	PASS / FAIL
-8	Web-grounded question	Current information when grounding enabled	PASS / FAIL
-9	Conversation context	Uses previous messages appropriately	PASS / FAIL
-10	Limitation/safety test	Does not confidently provide unsafe/unreliable assistance	PASS / FAIL
+#	Test	                                 Expected Result	                      Result
+1	General question	                    Relevant answer	                        PASS
+2	Study explanation                 	Simple explanation + example    	        PASS
+3	Coding/debugging	                   Identify and explain error               PASS
+4	Translation                         	Accurate translation	                  PASS
+5	Writing	                             Professional generated text	            PASS
+6	Flashcards	                          Flashcards + quiz	                      PASS
+7	File analysis	                       Useful file-based response      	        PASS
+8	Web-grounded question	                Current information                     PASS
+9	Conversation context	               Uses previous messages appropriately	    PASS
+10	Limitation/safety test          	Does not confidently provide unsafe       PASS
+
 V2 Score
 Pass rate = Passed tests / 10 × 100
 
