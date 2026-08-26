@@ -15,7 +15,6 @@
 
 Instead of using multiple websites for chatting with AI, finding study partners, translating text, summarizing PDFs, generating emails, debugging code, and learning collaboratively, Auralis AI brings everything together into a single modern application.
 
-The platform focuses on improving learning, collaboration, and productivity using Artificial Intelligence.
 
 ---
 
